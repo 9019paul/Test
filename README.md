@@ -9,6 +9,10 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+
+또는
+
+python app.py
 ```
 
 ## 2) 확인
@@ -43,3 +47,10 @@ curl -s -X POST http://127.0.0.1:8000/v1/novel/generate \
 export OPENAI_API_KEY=...your_key...
 export OPENAI_MODEL=gpt-4o-mini
 ```
+
+
+## 5) 실행이 바로 꺼지는 경우
+
+- `python app.py`를 실행해야 서버 프로세스가 유지됩니다.
+- 파일 탐색기에서 더블클릭으로 실행하면 콘솔이 즉시 닫혀 꺼진 것처럼 보일 수 있습니다.
+- Windows에서 확장자가 숨겨져 있으면 `requirements`처럼 보여도 실제 파일명은 `requirements.txt`인지 확인하세요.

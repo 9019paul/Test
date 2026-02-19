@@ -223,3 +223,9 @@ async def validate_text(req: ValidateRequest) -> ValidationResult:
     if req.min_chars > req.max_chars:
         raise HTTPException(status_code=400, detail="min_chars는 max_chars보다 클 수 없습니다.")
     return validate_constraints(req.text, req.point_of_view, req.min_chars, req.max_chars)
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=False)
